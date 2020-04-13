@@ -1,0 +1,15 @@
+aside {
+    background-color: var(--color-black);
+    padding-top: 50px;
+}
+aside .menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+
+aside .menu a:hover {
+    background-color: var(--color-secondary);
+}

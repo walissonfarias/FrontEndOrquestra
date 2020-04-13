@@ -1,0 +1,35 @@
+#home {
+  flex-direction: column;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+#home .container-home {
+  overflow: auto;
+  width: 45%;
+  max-height: calc(100% - 50px);
+  overflow-x: hidden;
+  margin: 0 25px;
+  margin-top: 50px;
+  background-color: var(--color-white);
+}
+
+#home .container-home h2 {
+  margin: 50px;
+}
+
+#home .container-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+#home .content-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 25px 0;
+}

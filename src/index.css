@@ -1,0 +1,46 @@
+:root {
+  --color-primary: #C59C5F;
+  --color-secondary: #7B3712;
+  --color-background: #F5F5F5;
+  --color-background-card: #FBFBFB;
+  --color-black: #292829;
+  --color-white: #FFFFFF;
+  --color-gray: #8A8A8A;
+  --color-light-gray: #E8E8E8;
+  
+  --header-height: 100px;
+  --aside-width:100px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app{
+  display: grid;
+  grid-template-columns: var(--aside-width) 1fr;
+  grid-template-rows: 
+    var(--header-height)
+    1fr;
+  grid-template-areas: /*define as areas onde cada elemento vai ficar PESQUISAR*/
+    "logo header"
+    "menu content";
+  height: 100vh;
+}
+
+aside.menu-area{
+  grid-area: menu;
+}
+
+.pages {
+  display: flex;
+  background-color: var(--color-background);
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+}
