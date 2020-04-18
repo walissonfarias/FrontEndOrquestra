@@ -11,8 +11,6 @@ build:
     script:
         - npm install --progress=false
         - npm run build
-        - rm -rf public
-        - mv build public
     artifacts:
         paths:
             - public
