@@ -18,7 +18,7 @@ export default () => {
   }, [])
 
   async function handleAddNews() {
-    await api.post('https://orquestraouropreto.herokuapp.com/news', news)
+    await api.post('/news', news)
     localStorage.removeItem('@news')
     history.push('/')
   }
@@ -27,7 +27,7 @@ export default () => {
     const data = localStorage.getItem('@news')
     const dataId = localStorage.getItem('@editItem_id')
     
-    await api.put(`https://orquestraouropreto.herokuapp.com/news/${dataId}`, JSON.parse(data))
+    await api.put(`/news/${dataId}`, JSON.parse(data))
     
     localStorage.removeItem('@isEdit')
     localStorage.removeItem('@news')

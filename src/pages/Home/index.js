@@ -3,16 +3,26 @@ import React, { useEffect, useState } from 'react'
 import './styles.css'
 
 import api from '../../services/api'
+import api2 from '../../services/apiEvents'
 
 import CardNews from '../../components/CardNews'
+import CardEvents from '../../components/CardEvents'
 
 export default () => {
   const [news, setNews] = useState([])
+  const [events, setEvents] = useState([]) 
 
   useEffect(() => {
     (async () => {
       const { data } = await api.get('/news')
       setNews(data)
+    })()
+  }, [])
+
+  useEffect(() => {
+    (async () => {
+      const { data299 } = await api2.get('/events?page=1')
+      setEvents(data299)
     })()
   }, [])
 
@@ -22,6 +32,17 @@ export default () => {
         <h2>Últimos eventos adicionados</h2>
 
         <div className="container-cards">
+        {
+            events ? 
+            events.map(item => 
+              <div className="content-card" key={item._id}>
+                <CardEvents events={item} home={true} />
+              </div>
+            )
+            :
+            console.log(events,"tfglaksjflksdjflaksdjflaksjd flaksjdvnfklajdvnlj\n\n\n\n\n")
+
+          }
           
         </div>
       </div>
