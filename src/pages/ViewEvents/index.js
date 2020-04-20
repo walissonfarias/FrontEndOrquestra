@@ -37,7 +37,7 @@ export default () => {
 	}
 
 	function handleBack() {
-		history.push('/add-news')
+		history.push('/add-events')
 	}
 
     return (

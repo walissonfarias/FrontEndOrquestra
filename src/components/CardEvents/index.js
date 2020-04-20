@@ -2,31 +2,11 @@ import React from 'react'
 import './styles.css'
 import edit from '../../assets/icons/edit.svg'
 import trash from '../../assets/icons/trash.svg'
-
+import splitTime from '../../utils/splitDate'
 import teste from '../../assets/i.jpg'
 
 export default ({events, home}) => {
 
-
-    function splitTime(){
-        const time = String (events.duration)
-        const minutos = time.split(" ")
-        let converte = Number(minutos[0])
-        let cont=0;
-        while(converte >= 60){
-            converte-=60
-            cont++;   
-        }
-        const time2 = String(events.startTime)
-        var aux = time2.split(':')
-        var hora = +aux[0];
-        var minutoss = +aux[1];
-
-        ( hora + cont > 24 ) ? hora = hora+cont -24 : hora+= cont;
-        ( minutoss+converte > 60 ) ? minutoss = minutoss + converte - 60 : minutoss+=converte ;
-        
-        return  hora + ":" + minutoss
-    }
 
     async function handleUpdateNews(){
         // const {data} = await api.get(`/events/${events._id}`)
@@ -59,7 +39,7 @@ export default ({events, home}) => {
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         Local
                     </p>
-                    <p className = "local-value">{events.startTime} - {splitTime()}
+                    <p className = "local-value">{events.startTime} - {splitTime(events)}
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;

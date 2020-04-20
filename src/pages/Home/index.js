@@ -21,7 +21,7 @@ export default () => {
 
   useEffect(() => {
     (async () => {
-      const { data299 } = await api2.get('/events?page=1')
+      const { data299 } = await api2.get('/events')
       setEvents(data299)
     })()
   }, [])
@@ -40,7 +40,7 @@ export default () => {
               </div>
             )
             :
-            console.log(events,"tfglaksjflksdjflaksdjflaksjd flaksjdvnfklajdvnlj\n\n\n\n\n")
+            console.log(events,"\n\n")
 
           }
           
