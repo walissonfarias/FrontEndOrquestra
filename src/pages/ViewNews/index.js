@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom"
 
 import './styles.css'
 
-import api from '../../services/api'
+import api from '../../services/apiEvents'
 
 import CardNews from '../../components/CardNews'
 
@@ -18,7 +18,7 @@ export default () => {
   }, [])
 
   async function handleAddNews() {
-    await api.post('https://orquestraouropreto.herokuapp.com/news', news)
+    await api.post('/news', news)
     localStorage.removeItem('@news')
     history.push('/')
   }
@@ -27,7 +27,7 @@ export default () => {
     const data = localStorage.getItem('@news')
     const dataId = localStorage.getItem('@editItem_id')
     
-    await api.put(`https://orquestraouropreto.herokuapp.com/news/${dataId}`, JSON.parse(data))
+    await api.put(`/news/${dataId}`, JSON.parse(data))
     
     localStorage.removeItem('@isEdit')
     localStorage.removeItem('@news')
@@ -66,8 +66,8 @@ export default () => {
 
             <div className="container-buttons">
               {localStorage.getItem('@isEdit') ?
-                <button onClick={handleUpdateNews}>Atualizar Evento</button> :
-                <button onClick={handleAddNews}>Adicionar Evento</button>
+                <button onClick={handleUpdateNews}>Atualizar Notícia</button> :
+                <button onClick={handleAddNews}>Adicionar Notícia</button>
               }              
               <button onClick={handleBack}>Editar</button>
             </div>
