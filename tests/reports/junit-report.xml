@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="adicionar-notícia;adicionar-notícia-com-sucesso" tests="16" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/adicionar-noticia.feature">
+            </property>
+        </properties>
+        <testcase name="Dado que o administrador esteja na tela de adicionar notícias" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="12.707998551">
+        </testcase>
+        <testcase name="Quando o administrador preencher o campo Título da notícia com &quot;Title&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.051544723">
+        </testcase>
+        <testcase name="E o campo Título reduzido com &quot;briefTitle&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.083408126">
+        </testcase>
+        <testcase name="E o campo Breve descrição com &quot;description&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.041804814">
+        </testcase>
+        <testcase name="E o campo Imagem com &quot;black-hole.jpg&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.025018682">
+        </testcase>
+        <testcase name="E o campo Notícia com &quot;testando a aplicação&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="1.164515603">
+        </testcase>
+        <testcase name="E clicar no botão Visualizar notícia" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.300265545">
+        </testcase>
+        <testcase name="Então o administrador deve pré-visualizar a Imagem &quot;data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wCEAAMBAQ&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.264227857">
+        </testcase>
+        <testcase name="E o Título &quot;Title&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.037264003">
+        </testcase>
+        <testcase name="E a Breve descrição &quot;description&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.014011044">
+        </testcase>
+        <testcase name="E o Texto da notícia &quot;testando a aplicação&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.014820785">
+        </testcase>
+        <testcase name="E o Título reduzido &quot;BRIEFTITLE&quot;" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.012576393">
+        </testcase>
+        <testcase name="Quando o administrador clicar no botão Adicionar Notícia" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="1.244223056">
+        </testcase>
+        <testcase name="Então o administrador deve ver a Imagem &quot;data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wCEAAMBAQ&quot; na notícia na home" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.171201307">
+        </testcase>
+        <testcase name="E a Breve descrição &quot;BRIEFTITLE&quot; na notícia na home" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.054831483">
+        </testcase>
+        <testcase name="E a Descrição &quot;DESCRIPTION&quot; na notícia na home" classname="adicionar-notícia;adicionar-notícia-com-sucesso" time="0.019876582">
+        </testcase>
+    </testsuite>
+    <testsuite name="adicionar-notícia;adicionar-notícia-com-falha-(sem-preencher-os-campos)" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/adicionar-noticia.feature">
+            </property>
+        </properties>
+        <testcase name="Dado que o administrador esteja na tela de adicionar notícias" classname="adicionar-notícia;adicionar-notícia-com-falha-(sem-preencher-os-campos)" time="14.843649882">
+        </testcase>
+        <testcase name="Quando clicar no botão Visualizar notícia" classname="adicionar-notícia;adicionar-notícia-com-falha-(sem-preencher-os-campos)" time="0.411423067">
+        </testcase>
+        <testcase name="Então o administrador deve permanecer na tela de adicionar notícia" classname="adicionar-notícia;adicionar-notícia-com-falha-(sem-preencher-os-campos)" time="0.01195557">
+        </testcase>
+    </testsuite>
+    <testsuite name="editar-notícia;editar-notícia-com-sucesso" tests="5" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/editar-noticia.feature">
+            </property>
+        </properties>
+        <testcase name="Dado que o administrador esteja na home" classname="editar-notícia;editar-notícia-com-sucesso" time="11.618001334">
+        </testcase>
+        <testcase name="Quando o administrador clicar no ícone de editar notícia na última notícia adicionada" classname="editar-notícia;editar-notícia-com-sucesso" time="1.307462321">
+        </testcase>
+        <testcase name="E preencher o campo Imagem com &quot;black-hole-2.jpg&quot;" classname="editar-notícia;editar-notícia-com-sucesso" time="1.03162147">
+        </testcase>
+        <testcase name="E clicar no botão Visualizar notícia" classname="editar-notícia;editar-notícia-com-sucesso" time="0.257720142">
+        </testcase>
+        <testcase name="Então o administrador deve ver a Imagem &quot;data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAUDBA&quot; na notícia na home" classname="editar-notícia;editar-notícia-com-sucesso" time="0.093015767">
+        </testcase>
+    </testsuite>
+    <testsuite name="editar-notícia;editar-notícia-com-falha-(sem-preencher-os-campos)" tests="5" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/editar-noticia.feature">
+            </property>
+        </properties>
+        <testcase name="Dado que o administrador esteja na home" classname="editar-notícia;editar-notícia-com-falha-(sem-preencher-os-campos)" time="11.914770539">
+        </testcase>
+        <testcase name="Quando o administrador clicar no ícone de editar notícia na última notícia adicionada" classname="editar-notícia;editar-notícia-com-falha-(sem-preencher-os-campos)" time="1.662689378">
+        </testcase>
+        <testcase name="E remover todos os valores dos campos da notícia" classname="editar-notícia;editar-notícia-com-falha-(sem-preencher-os-campos)" time="2.082277798">
+        </testcase>
+        <testcase name="E clicar no botão Visualizar notícia" classname="editar-notícia;editar-notícia-com-falha-(sem-preencher-os-campos)" time="0.277319804">
+        </testcase>
+        <testcase name="Então o administrador deve permanecer na tela de adicionar notícia" classname="editar-notícia;editar-notícia-com-falha-(sem-preencher-os-campos)" time="0.009336559">
+        </testcase>
+    </testsuite>
+    <testsuite name="remover-notícia;remover-notícia-com-sucesso" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/remover-noticia.feature">
+            </property>
+        </properties>
+        <testcase name="Dado que o administrador esteja na home" classname="remover-notícia;remover-notícia-com-sucesso" time="10.470160783">
+        </testcase>
+        <testcase name="Quando o administrador clicar no ícone de remover notícia na última notícia adicionada" classname="remover-notícia;remover-notícia-com-sucesso" time="1.504946129">
+        </testcase>
+        <testcase name="E clicar no botão Deletar" classname="remover-notícia;remover-notícia-com-sucesso" time="1.255707992">
+        </testcase>
+        <testcase name="Então o administrador deve visualizar uma notícia a menos na home" classname="remover-notícia;remover-notícia-com-sucesso" time="0.000406516">
+        </testcase>
+    </testsuite>
+    <testsuite name="remover-notícia;cancelar-a-remoção-de-uma-notícia" tests="4" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/remover-noticia.feature">
+            </property>
+        </properties>
+        <testcase name="Dado que o administrador esteja na home" classname="remover-notícia;cancelar-a-remoção-de-uma-notícia" time="12.703146618">
+        </testcase>
+        <testcase name="Quando o administrador clicar no ícone de remover notícia na última notícia adicionada" classname="remover-notícia;cancelar-a-remoção-de-uma-notícia" time="1.92533066">
+        </testcase>
+        <testcase name="E clicar no botão Cancelar" classname="remover-notícia;cancelar-a-remoção-de-uma-notícia" time="0.264696889">
+        </testcase>
+        <testcase name="Então o administrador deve visualizar o mesmo número de notícias que antes" classname="remover-notícia;cancelar-a-remoção-de-uma-notícia" time="0.000330617">
+        </testcase>
+    </testsuite>
+</testsuites>

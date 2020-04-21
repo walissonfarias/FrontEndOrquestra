@@ -8,11 +8,11 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "express": "4.17.1",
     "express-favicon": "2.0.1",
-    "path": "0.12.7",
-    "bootstrap": "^4.4.1",
     "moment": "^2.24.0",
+    "path": "0.12.7",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
@@ -25,7 +25,8 @@
     "start": "node server.js",
     "devStart": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "node ./node_modules/selenium-cucumber-js/index.js -s ./tests/step-definitions",
+    "test-feature": "node ./node_modules/selenium-cucumber-js/index.js -s ./tests/step-definitions -f",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,5 +43,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "selenium-cucumber-js": "1.7.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-plugin-import": "2.20.2"
   }
 }

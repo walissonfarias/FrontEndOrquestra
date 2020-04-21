@@ -14,8 +14,6 @@ import UserContext from '../../contexts/index'
 export default ({ news, home }) => {
   const history = useHistory()
 
-  //const [newss, setNewss] = useState('')
-
   const {setShowModal, setWhere} = useContext(UserContext)
 
 

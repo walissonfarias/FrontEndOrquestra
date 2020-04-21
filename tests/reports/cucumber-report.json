@@ -1,0 +1,648 @@
+[
+  {
+    "description": "  Para publicar novas notícias\n  Eu como administrador\n  Gostaria de entrar no sistema para cadastrar uma notícia",
+    "elements": [
+      {
+        "id": "adicionar-notícia;adicionar-notícia-com-sucesso",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Adicionar notícia com sucesso",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "name": "que o administrador esteja na tela de adicionar notícias",
+            "result": {
+              "status": "passed",
+              "duration": 12707998551
+            },
+            "line": 9,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "o administrador preencher o campo Título da notícia com \"Title\"",
+            "result": {
+              "status": "passed",
+              "duration": 51544723
+            },
+            "line": 12,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:8"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o campo Título reduzido com \"briefTitle\"",
+            "result": {
+              "status": "passed",
+              "duration": 83408126
+            },
+            "line": 13,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:10"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o campo Breve descrição com \"description\"",
+            "result": {
+              "status": "passed",
+              "duration": 41804814
+            },
+            "line": 14,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:12"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o campo Imagem com \"black-hole.jpg\"",
+            "result": {
+              "status": "passed",
+              "duration": 25018682
+            },
+            "line": 15,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:14"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o campo Notícia com \"testando a aplicação\"",
+            "result": {
+              "status": "passed",
+              "duration": 1164515603
+            },
+            "line": 16,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:20"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "clicar no botão Visualizar notícia",
+            "result": {
+              "status": "passed",
+              "duration": 300265545
+            },
+            "line": 17,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:22"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve pré-visualizar a Imagem \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wCEAAMBAQ\"",
+            "result": {
+              "status": "passed",
+              "duration": 264227857
+            },
+            "line": 18,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o Título \"Title\"",
+            "result": {
+              "status": "passed",
+              "duration": 37264003
+            },
+            "line": 19,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:26"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "a Breve descrição \"description\"",
+            "result": {
+              "status": "passed",
+              "duration": 14011044
+            },
+            "line": 20,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:28"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o Texto da notícia \"testando a aplicação\"",
+            "result": {
+              "status": "passed",
+              "duration": 14820785
+            },
+            "line": 21,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:30"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o Título reduzido \"BRIEFTITLE\"",
+            "result": {
+              "status": "passed",
+              "duration": 12576393
+            },
+            "line": 22,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:32"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "o administrador clicar no botão Adicionar Notícia",
+            "result": {
+              "status": "passed",
+              "duration": 1244223056
+            },
+            "line": 23,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:34"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve ver a Imagem \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wCEAAMBAQ\" na notícia na home",
+            "result": {
+              "status": "passed",
+              "duration": 171201307
+            },
+            "line": 24,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:36"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "a Breve descrição \"BRIEFTITLE\" na notícia na home",
+            "result": {
+              "status": "passed",
+              "duration": 54831483
+            },
+            "line": 25,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:38"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "a Descrição \"DESCRIPTION\" na notícia na home",
+            "result": {
+              "status": "passed",
+              "duration": 19876582
+            },
+            "line": 26,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:40"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 4781991443
+            },
+            "hidden": true,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/node_modules/selenium-cucumber-js/runtime/world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "adicionar-notícia;adicionar-notícia-com-falha-(sem-preencher-os-campos)",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "Adicionar notícia com falha (sem preencher os campos)",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "name": "que o administrador esteja na tela de adicionar notícias",
+            "result": {
+              "status": "passed",
+              "duration": 14843649882
+            },
+            "line": 9,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "clicar no botão Visualizar notícia",
+            "result": {
+              "status": "passed",
+              "duration": 411423067
+            },
+            "line": 29,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:22"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve permanecer na tela de adicionar notícia",
+            "result": {
+              "status": "passed",
+              "duration": 11955570
+            },
+            "line": 30,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:42"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 4358039944
+            },
+            "hidden": true,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/node_modules/selenium-cucumber-js/runtime/world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "adicionar-notícia",
+    "keyword": "Funcionalidade",
+    "line": 3,
+    "name": "Adicionar notícia",
+    "tags": [],
+    "uri": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/adicionar-noticia.feature"
+  },
+  {
+    "description": "  Para alterar uma notícia publicada\n  Eu como administrador\n  Gostaria de entrar no sistema web e editar essa notícia",
+    "elements": [
+      {
+        "id": "editar-notícia;editar-notícia-com-sucesso",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Editar notícia com sucesso",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "name": "que o administrador esteja na home",
+            "result": {
+              "status": "passed",
+              "duration": 11618001334
+            },
+            "line": 9,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/editar-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "o administrador clicar no ícone de editar notícia na última notícia adicionada",
+            "result": {
+              "status": "passed",
+              "duration": 1307462321
+            },
+            "line": 10,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/editar-noticia-steps.js:8"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "preencher o campo Imagem com \"black-hole-2.jpg\"",
+            "result": {
+              "status": "passed",
+              "duration": 1031621470
+            },
+            "line": 13,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/editar-noticia-steps.js:10"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "clicar no botão Visualizar notícia",
+            "result": {
+              "status": "passed",
+              "duration": 257720142
+            },
+            "line": 14,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:22"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve ver a Imagem \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAUDBA\" na notícia na home",
+            "result": {
+              "status": "passed",
+              "duration": 93015767
+            },
+            "line": 15,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:36"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 3654250442
+            },
+            "hidden": true,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/node_modules/selenium-cucumber-js/runtime/world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "editar-notícia;editar-notícia-com-falha-(sem-preencher-os-campos)",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Editar notícia com falha (sem preencher os campos)",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "name": "que o administrador esteja na home",
+            "result": {
+              "status": "passed",
+              "duration": 11914770539
+            },
+            "line": 9,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/editar-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "o administrador clicar no ícone de editar notícia na última notícia adicionada",
+            "result": {
+              "status": "passed",
+              "duration": 1662689378
+            },
+            "line": 10,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/editar-noticia-steps.js:8"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "remover todos os valores dos campos da notícia",
+            "result": {
+              "status": "passed",
+              "duration": 2082277798
+            },
+            "line": 19,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/editar-noticia-steps.js:17"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "clicar no botão Visualizar notícia",
+            "result": {
+              "status": "passed",
+              "duration": 277319804
+            },
+            "line": 20,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:22"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve permanecer na tela de adicionar notícia",
+            "result": {
+              "status": "passed",
+              "duration": 9336559
+            },
+            "line": 21,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:42"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 4122781625
+            },
+            "hidden": true,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/node_modules/selenium-cucumber-js/runtime/world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "editar-notícia",
+    "keyword": "Funcionalidade",
+    "line": 3,
+    "name": "Editar notícia",
+    "tags": [],
+    "uri": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/editar-noticia.feature"
+  },
+  {
+    "description": "  Para retirar uma notícia que foi publicada no aplicativo por engano ou erro\n  Eu como administrador\n  Gostaria de entrar no sistema web para remover essa notícia do aplicativo",
+    "elements": [
+      {
+        "id": "remover-notícia;remover-notícia-com-sucesso",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Remover notícia com sucesso",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "name": "que o administrador esteja na home",
+            "result": {
+              "status": "passed",
+              "duration": 10470160783
+            },
+            "line": 9,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/editar-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "o administrador clicar no ícone de remover notícia na última notícia adicionada",
+            "result": {
+              "status": "passed",
+              "duration": 1504946129
+            },
+            "line": 10,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/remover-noticia-steps.js:4"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "clicar no botão Deletar",
+            "result": {
+              "status": "passed",
+              "duration": 1255707992
+            },
+            "line": 13,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/remover-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve visualizar uma notícia a menos na home",
+            "result": {
+              "status": "passed",
+              "duration": 406516
+            },
+            "line": 14,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/remover-noticia-steps.js:8"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 4536046425
+            },
+            "hidden": true,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/node_modules/selenium-cucumber-js/runtime/world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "remover-notícia;cancelar-a-remoção-de-uma-notícia",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Cancelar a remoção de uma notícia",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "name": "que o administrador esteja na home",
+            "result": {
+              "status": "passed",
+              "duration": 12703146618
+            },
+            "line": 9,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/editar-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "o administrador clicar no ícone de remover notícia na última notícia adicionada",
+            "result": {
+              "status": "passed",
+              "duration": 1925330660
+            },
+            "line": 10,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/remover-noticia-steps.js:4"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "clicar no botão Cancelar",
+            "result": {
+              "status": "passed",
+              "duration": 264696889
+            },
+            "line": 17,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/remover-noticia-steps.js:10"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve visualizar o mesmo número de notícias que antes",
+            "result": {
+              "status": "passed",
+              "duration": 330617
+            },
+            "line": 18,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/remover-noticia-steps.js:12"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 4276079592
+            },
+            "hidden": true,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/node_modules/selenium-cucumber-js/runtime/world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "remover-notícia",
+    "keyword": "Funcionalidade",
+    "line": 3,
+    "name": "Remover notícia",
+    "tags": [],
+    "uri": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/features/remover-noticia.feature"
+  }
+]

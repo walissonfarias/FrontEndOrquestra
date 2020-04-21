@@ -1,0 +1,301 @@
+[
+  {
+    "description": "  Para publicar novas notícias\n  Eu como administrador\n  Gostaria de entrar no sistema para cadastrar uma notícia",
+    "elements": [
+      {
+        "id": "adicionar-notícia;adicionar-notícia-com-sucesso",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Adicionar notícia com sucesso",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "name": "que o administrador esteja na tela de adicionar notícias",
+            "result": {
+              "status": "failed",
+              "duration": 409570,
+              "error_message": "TypeError: Cannot read property 'url' of undefined\n    at createWorld.<anonymous> (/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:6:112)\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)"
+            },
+            "line": 9,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "o administrador preencher o campo Título da notícia com \"Title\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:8"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o campo Título reduzido com \"briefTitle\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:10"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o campo Breve descrição com \"description\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:12"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o campo Imagem com \"black-hole.jpg\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 15,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:14"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o campo Notícia com \"testando a aplicação\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 16,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:20"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "clicar no botão Visualizar notícia",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:22"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve pré-visualizar a Imagem \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wCEAAMBAQ\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o Título \"Title\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 19,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:26"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "a Breve descrição \"description\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:28"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o Texto da notícia \"testando a aplicação\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:30"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "o Título reduzido \"BRIEFTITLE\"",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 22,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:32"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "o administrador clicar no botão Adicionar Notícia",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 23,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:34"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve ver a Imagem \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wCEAAMBAQ\" na notíca na home",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 24,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:36"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "a Breve descrição \"BRIEFTITLE\" na notícia na home",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 25,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:38"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "name": "a Descrição \"DESCRIPTION\" na notícia na home",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 26,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:40"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 24376401041
+            },
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABRAAAAJ2CAYAAAAnlq5NAAARpElEQVR4nO3YMQEAMAyAsPo3vSrgXo9EATfzAAAAAADC/A4AAAAAAO4yEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAApAV8lZM7VVBp0AAAAABJRU5ErkJggg==",
+                "mime_type": "image/png"
+              }
+            ],
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/node_modules/selenium-cucumber-js/runtime/world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "id": "adicionar-notícia;adicionar-notícia-com-falha-(sem-preencher-os-campos)",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "Adicionar notícia com falha (sem preencher os campos)",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "name": "que o administrador esteja na tela de adicionar notícias",
+            "result": {
+              "status": "failed",
+              "duration": 188207,
+              "error_message": "TypeError: Cannot read property 'url' of undefined\n    at createWorld.<anonymous> (/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:6:112)\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)"
+            },
+            "line": 9,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:6"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "name": "clicar no botão Visualizar notícia",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 29,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:22"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "name": "o administrador deve permanecer na tela de adicionar notícia",
+            "result": {
+              "status": "skipped"
+            },
+            "line": 30,
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/step-definitions/adicionar-noticia-steps.js:42"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After ",
+            "result": {
+              "status": "passed",
+              "duration": 11996298808
+            },
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABRAAAAJ2CAYAAAAnlq5NAAARpElEQVR4nO3YMQEAMAyAsPo3vSrgXo9EATfzAAAAAADC/A4AAAAAAO4yEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAAJAMRAAAAAEgGIgAAAACQDEQAAAAAIBmIAAAAAEAyEAEAAACAZCACAAAAAMlABAAAAACSgQgAAAAApAV8lZM7VVBp0AAAAABJRU5ErkJggg==",
+                "mime_type": "image/png"
+              }
+            ],
+            "match": {
+              "location": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/node_modules/selenium-cucumber-js/runtime/world.js:250"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "adicionar-notícia",
+    "keyword": "Funcionalidade",
+    "line": 3,
+    "name": "Adicionar notícia",
+    "tags": [],
+    "uri": "/home/ailton/UFOP/TerraLAB/orquestra/frontend/frontweb/tests/features/adicionar-noticia.feature"
+  }
+]
