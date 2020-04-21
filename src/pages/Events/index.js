@@ -19,10 +19,10 @@ export default () => {
     const [address, setAddress] = useState('')
     const [local, setLocal] = useState('')
     const [description, setDescription] = useState('')
-    const [lat, setLat] = useState('')
-    const [lon, setLon] = useState('')
-    const [start, setStart] = useState('')
-    const [end, setEnd] = useState('')
+    // const [lat, setLat] = useState('')
+    // const [lon, setLon] = useState('')
+    // const [start, setStart] = useState('')
+    // const [end, setEnd] = useState('')
 
     useEffect(()=>{
       const data = localStorage.getItem('@events')
@@ -37,10 +37,10 @@ export default () => {
         setLocal(event.local)
         setDescription(event.description)
         setTour(event.tour)
-        setEnd(event.end)
-        setStart(event.start)
-        setLon(event.lon)
-        setLat(event.lat)
+        // setEnd(event.end)
+        // setStart(event.start)
+        // setLon(event.lon)
+        // setLat(event.lat)
       }
     },[])
 
