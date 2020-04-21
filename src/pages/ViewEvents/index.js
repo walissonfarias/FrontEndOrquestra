@@ -19,10 +19,12 @@ export default () => {
 	}, [])
 
 	async function handleUpdateEvents(){
-		// const data = localStorage.getItem('@events')
-		// const dataId = localStorage.getItem('@editItem_id_events')
+		const data = localStorage.getItem('@events')
+		const dataId = localStorage.getItem('@editItem_id_events')
 		
-		//await api.put(`/events/${dataId}`, JSON.parse(data))
+		await api.put(`/events/${dataId}`, JSON.parse(data)).then(response => {
+			console.log(response)
+		})
 		
 		localStorage.removeItem('@isEditEvent')
 		localStorage.removeItem('@events')
@@ -31,7 +33,9 @@ export default () => {
 	  }
 
 	async function handleAddEvents() {
-		await api.post('/events', events)
+		await api.post('/events', events).then(response => {
+			console.log(response)
+		})
 		localStorage.removeItem('@events')
 		history.push('/')
 	}

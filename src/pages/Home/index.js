@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import './styles.css'
 
-import api from '../../services/api'
-import api2 from '../../services/apiEvents'
+import api from '../../services/apiEvents'
 
 import CardNews from '../../components/CardNews'
 import CardEvents from '../../components/CardEvents'
@@ -15,14 +14,15 @@ export default () => {
   useEffect(() => {
     (async () => {
       const { data } = await api.get('/news')
-      setNews(data)
+      setNews(data.docs)
     })()
   }, [])
 
   useEffect(() => {
     (async () => {
-      const { data299 } = await api2.get('/events')
-      setEvents(data299)
+      const {data} = await api.get('/events')
+      setEvents( data.docs)
+
     })()
   }, [])
 
@@ -40,7 +40,7 @@ export default () => {
               </div>
             )
             :
-            console.log(events,"\n\n")
+            <></>
 
           }
           

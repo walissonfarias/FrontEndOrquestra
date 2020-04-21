@@ -7,31 +7,27 @@ import UserContext from './contexts/index'
 
 import Header from './components/Header'
 import Nav from './components/Nav'
-import DeleteNewsModal from './components/DeleteNews/index'
+import Modal from './components/Modal/index'
 
-
+//import api from "./services/apiEvents"
 export default () => {
     
     const [showModal, setShowModal] = useState(false)
-    const isEvent = localStorage.getItem('@isEvent')
-
+    const [where, setWhere] = useState('')
+    
     function closeModal(){        
         setShowModal(false)
+        //localStorage.removeItem('@isEvent')
     }
-    function deleteContent(){
-        setShowModal(false)
-        //isEvent ? chamada a api do event : chamada api da noticia
-
-    }
-
+    
     return (
         <BrowserRouter>
             <div className="app">
-                <UserContext.Provider value = {{showModal, setShowModal}}>
+                <UserContext.Provider value = {{showModal, setShowModal,where, setWhere}}>
                     <Header/>
                     <Nav/>
                     <Router />
-                    {showModal ? <DeleteNewsModal onClose={()=>{closeModal()}} onDelete ={()=>{deleteContent()}} isEvent = {isEvent}/> : null}
+                    {showModal ? <Modal onClose={()=>{closeModal()}} isEvent = {localStorage.getItem('@isEvent')}/> : null}
                 </UserContext.Provider>
             </div>
         </BrowserRouter>

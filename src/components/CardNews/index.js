@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import moment from 'moment'
 import './styles.css'
 
-import api from '../../services/api'
+import api from '../../services/apiEvents'
 
 import edit from '../../assets/icons/edit.svg'
 import trash from '../../assets/icons/trash.svg'
@@ -16,7 +16,7 @@ export default ({ news, home }) => {
 
   //const [newss, setNewss] = useState('')
 
-  const {setShowModal} = useContext(UserContext)
+  const {setShowModal, setWhere} = useContext(UserContext)
 
 
   async function handleEditNews() {
@@ -24,14 +24,16 @@ export default ({ news, home }) => {
     localStorage.setItem('@news', JSON.stringify(data))
     localStorage.setItem('@isEdit', true)
     localStorage.setItem('@editItem_id', data._id)
+    localStorage.setItem('@isEvent', true)
     history.push('/add-news')
   }
   async function handleDeleteNews(){
     const {data} = await api.get(`/news/${news._id}`)
     localStorage.setItem('@news', JSON.stringify(data))
-    localStorage.setItem('@editItem_id', data._id)
+    localStorage.setItem('@deleteItem_id', data._id)
     localStorage.setItem('@isEvent', false)
     setShowModal(true)
+    setWhere('n')
   }
   
   return (

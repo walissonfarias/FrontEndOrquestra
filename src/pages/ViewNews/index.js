@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom"
 
 import './styles.css'
 
-import api from '../../services/api'
+import api from '../../services/apiEvents'
 
 import CardNews from '../../components/CardNews'
 
@@ -66,8 +66,8 @@ export default () => {
 
             <div className="container-buttons">
               {localStorage.getItem('@isEdit') ?
-                <button onClick={handleUpdateNews}>Atualizar Evento</button> :
-                <button onClick={handleAddNews}>Adicionar Evento</button>
+                <button onClick={handleUpdateNews}>Atualizar Notícia</button> :
+                <button onClick={handleAddNews}>Adicionar Notícia</button>
               }              
               <button onClick={handleBack}>Editar</button>
             </div>

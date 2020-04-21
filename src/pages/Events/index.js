@@ -4,21 +4,25 @@ import { useHistory } from 'react-router-dom'
 import './styles.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import moment from 'moment'
+import splitTime from '../../utils/splitTime'
 
 export default () => {
     const history = useHistory()
 
     const [name, setName] = useState('')
     const [duration, setDuration] = useState('')
-    const [tour, setTour] = useState('Turnê')
+    const [tour, setTour] = useState('')
     const [date, setDate] = useState('')
     const [classification, setClassification] = useState('')
     const [startTime, setStartTime] = useState('')
     const [address, setAddress] = useState('')
     const [local, setLocal] = useState('')
     const [description, setDescription] = useState('')
-    
-    
+    const [lat, setLat] = useState('')
+    const [lon, setLon] = useState('')
+    const [start, setStart] = useState('')
+    const [end, setEnd] = useState('')
 
     useEffect(()=>{
       const data = localStorage.getItem('@events')
@@ -32,27 +36,35 @@ export default () => {
         setAddress(event.address)
         setLocal(event.local)
         setDescription(event.description)
-        //
-        //
+        setTour(event.tour)
+        setEnd(event.end)
+        setStart(event.start)
+        setLon(event.lon)
+        setLat(event.lat)
       }
     },[])
 
     function handleVisualization() {
+      const endTime = splitTime(duration, startTime)
+      localStorage.setItem('@startTime', startTime)
+
       const data = {
-        name,
-        duration,
-        date,
-        tour,
-        classification,
-        startTime,
-        address,
-        local,
-        description
-      }
+        "name": name,
+        "tour": tour,
+        "date": moment(date).format(),
+        "start": moment(date+"T"+startTime).format(),
+        "end": date+"T"+endTime+":00-03:00",
+        "local": local,
+        "address": address,
+        "lat": -73.97,
+        "long": 40.77,
+        "duration": duration,
+        "classification": classification,
+        "description": description
+    }
       localStorage.setItem('@events', JSON.stringify(data))
 
       history.push('/view-events')
-
     }
     
     return (
@@ -75,15 +87,13 @@ export default () => {
 
               <div className="content-divider-text">
                 
-                <select className="select-tour"
-                  placeholder={tour}
+                <input 
+                  type = "color"
+                  placeholder="Turnê"
                   value={tour}
                   onChange ={event=> setTour(event.target.value)}
-                  required name="turne">
-                  <option value="Municipal">Azul</option>
-                  <option value="Estadual">Dourado</option>
-                  <option value="Nacional">Laranja</option>
-                </select>
+                  required
+                />
                 
 
                 <input 
