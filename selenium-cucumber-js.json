@@ -1,0 +1,7 @@
+{
+  "steps": "./tests/step-definitions",
+  "pageObjects": "./tests/page-objects",
+  "reports": "./tests/reports",
+  "browser": "firefox",
+  "timeout": 60000
+}

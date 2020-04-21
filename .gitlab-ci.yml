@@ -1,0 +1,40 @@
+image: node:latest
+
+stages:
+    - build
+    - staging
+    - production
+
+build:
+    type: build
+    stage: build
+    script:
+        - npm install
+        - npm run build
+    artifacts:
+        paths:
+            - public
+
+staging:
+    type: deploy
+    stage: staging
+    image: ruby:latest
+    script:
+        - apt-get update -qy
+        - apt-get install -y ruby ruby-dev rubygems-integration
+        - gem install dpl
+        - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY --skip_cleanup
+    only:
+        - staging
+
+production:
+    type: deploy
+    stage: production
+    image: ruby:latest
+    script:
+        - apt-get update -qy
+        - apt-get install -y ruby ruby-dev rubygems-integration
+        - gem install dpl
+        - dpl --provider=heroku --app=$HEROKU_APP_PRODUCTION --api-key=$HEROKU_API_KEY --skip_cleanup
+    only:
+        - master
