@@ -53,7 +53,7 @@ export default () => {
         "tour": tour,
         "date": moment(date).format(),
         "start": moment(date+"T"+startTime).format(),
-        "end": date+"T"+endTime+":00-03:00",
+        "end":date+"T"+endTime+":00-03:00",
         "local": local,
         "address": address,
         "lat": -73.97,

@@ -17,13 +17,14 @@ export default ({onClose = () => {}},  isEvent) => {
     const {where} = useContext(UserContext)
     console.log(where);
     async function deleteContent(){
-        if(isEvent === true) {
-            await api.delete(`/events/${deleteID}`).then(response => {
+        if(where === 'n') {
+            await api.delete(`/news/${deleteID}`).then(response => {
                 console.log(response)
             })
         }  
         else {
-            await api.delete(`/news/${deleteID}`).then(response => {
+            
+            await api.delete(`/events/${deleteID}`).then(response => {
                 console.log(response)
             })
         }

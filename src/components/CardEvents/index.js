@@ -2,7 +2,6 @@ import React from 'react'
 import './styles.css'
 import edit from '../../assets/icons/edit.svg'
 import trash from '../../assets/icons/trash.svg'
-//import splitTime from '../../utils/splitTime'
 import TourImage from '../../assets/icons/iconTour'
 
 import api from '../../services/apiEvents'
@@ -85,4 +84,4 @@ export default ({events, home}) => {
             </div>
         </div>
     )
-} 
+}

@@ -9,7 +9,6 @@ import Header from './components/Header'
 import Nav from './components/Nav'
 import Modal from './components/Modal/index'
 
-//import api from "./services/apiEvents"
 export default () => {
     
     const [showModal, setShowModal] = useState(false)
@@ -17,7 +16,6 @@ export default () => {
     
     function closeModal(){        
         setShowModal(false)
-        //localStorage.removeItem('@isEvent')
     }
     
     return (
