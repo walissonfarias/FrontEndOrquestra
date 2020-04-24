@@ -68,7 +68,9 @@ export default () => {
         if (location.pathname === route) return
         switch (location.pathname) {
             case '/add-events':
+            case '/view-events':
             case '/add-news':
+            case '/view-news':
                 localStorage.clear()
                 setWhere(`descart@${route}`)
                 setShowModal(true)
