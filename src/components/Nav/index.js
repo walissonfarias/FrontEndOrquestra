@@ -66,6 +66,8 @@ export default () => {
     function handleOnClick(event, route) {
         event.preventDefault()
         if (location.pathname === route) return
+        if (location.pathname.split('-')[1] === route.split('-')[1]) return
+        
         switch (location.pathname) {
             case '/add-events':
             case '/view-events':
