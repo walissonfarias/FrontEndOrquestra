@@ -6,7 +6,7 @@ import './styles.css'
 
 import moment from 'moment'
 
-import CardEvents from '../../components/CardEvents'
+import CardEvents from '../../components/Card/CardEvents'
 import api from '../../services/apiEvents'
 
 export default () => {

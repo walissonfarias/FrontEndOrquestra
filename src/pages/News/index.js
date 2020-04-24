@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { TextField, Button } from '@material-ui/core'
+import { Button, Stepper, Step, StepLabel } from '@material-ui/core'
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
 import './styles.css'
 
+import StepOneNews from '../../components/Form/News/StepOne'
+import StepTwoNews from '../../components/Form/News/StepTwo'
+
 export default () => {
   const history = useHistory()
+
+  const steps = ['Dados', 'Notícia']
+  const [activeStep, setActiveStep] = useState(0)
 
   const [title, setTitle] = useState('')
   const [briefTitle, setBriefTitle] = useState('')
@@ -30,7 +36,13 @@ export default () => {
     }
   }, [])
 
-  function handleVisualization() {
+  function handleVisualization(event) {
+    if (activeStep < steps.length - 1) {
+      event.preventDefault()
+      setActiveStep(activeStep + 1)
+      return 
+    }
+
     const data = {
       title,
       briefTitle,
@@ -46,18 +58,9 @@ export default () => {
     history.push('/view-news')
   }
 
-  const toBase64 = file => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-  });
-
-  async function handleSetImage(event) {
-    const file = event.target.files[0];
-    const data = await toBase64(file);
-    setImage(data)
-    setImageName(file.name)
+  function handleBackStep() {
+    if (activeStep <= 0) return
+    setActiveStep(activeStep - 1)
   }
 
   return (
@@ -66,66 +69,46 @@ export default () => {
 
         <h2>Criar Notícia</h2>
 
+        <Stepper activeStep={activeStep} alternativeLabel>
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+
         <form onSubmit={handleVisualization}>
+          <div className="container-form">
+            { 
+              activeStep === 0 ? 
+                <StepOneNews
+                  title={title}
+                  setTitle={setTitle}
+                  briefTitle={briefTitle}
+                  setBriefTitle={setBriefTitle}
+                  description={description}
+                  setDescription={setDescription}
+                  image={image}
+                  setImage={setImage}
+                  setImageName={setImageName}
+                />
+                : activeStep === 1 ? 
+                <StepTwoNews
+                  text={text}
+                  setText={setText}
+                />
+                : <></>
+            }
+          </div>
+          
+          <div className="container-buttons">
+            <Button disabled={activeStep <= 0} className="button back" onClick={handleBackStep} variant="contained">Anterior</Button>
 
-          <div className="container-divider">
-            <TextField 
-              className="input" 
-              label="Título da notícia" 
-              variant="outlined" 
-              value={title}
-              onChange={event => setTitle(event.target.value)} 
-              required
-            />
+            <Button className="button" type="submit" variant="contained">
+              {activeStep < steps.length - 1 ? 'Próximo' : 'Visualizar'}
+            </Button>
           </div>
 
-          <div className="container-divider">
-
-            <div className="container-divider-text">
-              <TextField 
-                className="input" 
-                label="Título reduzido" 
-                variant="outlined" 
-                value={briefTitle}
-                onChange={event => setBriefTitle(event.target.value)} 
-                required
-              />
-              <TextField 
-                className="input" 
-                label="Breve descrição" 
-                variant="outlined" 
-                value={description}
-                onChange={event => setDescription(event.target.value)} 
-                required
-              />
-            </div>
-
-
-            <div className="container-divider-file">
-              { image ? <img src={image} alt="banner"/> : <p>Arraste sua imagem aqui ou clique para selecionar</p> }
-              <input
-                type="file"
-                onChange={handleSetImage}
-                placeholder="Breve descrição"
-                required={!image}
-              />
-            </div>
-          </div>
-
-          <div className="container-divider">
-            <TextField 
-              className="input" 
-              label="Notícia" 
-              variant="outlined" 
-              multiline 
-              rows={13} 
-              value={text}
-              onChange={event => setText(event.target.value)} 
-              required
-            />
-          </div>
-
-          <Button className="button" type="submit" variant="contained">Visualizar</Button>
 
         </form>
 

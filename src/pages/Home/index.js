@@ -5,8 +5,8 @@ import './styles.css'
 
 import api from '../../services/apiEvents'
 
-import CardNews from '../../components/CardNews'
-import CardEvents from '../../components/CardEvents'
+import CardNews from '../../components/Card/CardNews'
+import CardEvents from '../../components/Card/CardEvents'
 
 export default () => {
   const [events, setEvents] = useState([]) 

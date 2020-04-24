@@ -1,6 +1,6 @@
 import React from 'react'
-import CardNews from '../CardNews/index'
-import CardEvents from '../CardEvents/index'
+import CardNews from '../Card/CardNews/index'
+import CardEvents from '../Card/CardEvents/index'
 import './styles.css'
 import { useContext } from 'react'
 

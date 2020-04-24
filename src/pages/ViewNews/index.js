@@ -6,7 +6,7 @@ import './styles.css'
 
 import api from '../../services/apiEvents'
 
-import CardNews from '../../components/CardNews'
+import CardNews from '../../components/Card/CardNews'
 
 export default () => {
   const history = useHistory()
