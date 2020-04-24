@@ -20,33 +20,30 @@ export default ({title, setTitle, briefTitle, setBriefTitle, description, setDes
         <>
             <div className="container-divider">
                 <TextField 
-                className="input" 
-                label="Título da notícia" 
-                variant="outlined" 
-                value={title}
-                onChange={event => setTitle(event.target.value)} 
-                required
+                    className="input" 
+                    label="Título da notícia *" 
+                    variant="outlined" 
+                    value={title}
+                    onChange={event => setTitle(event.target.value)} 
                 />
             </div>
 
             <div className="container-divider">
                 <TextField 
                     className="input" 
-                    label="Título reduzido" 
+                    label="Título reduzido *" 
                     variant="outlined" 
                     value={briefTitle}
                     onChange={event => setBriefTitle(event.target.value)} 
-                    required
                 />
             </div>
             <div className="container-divider">
                 <TextField 
                     className="input" 
-                    label="Breve descrição" 
+                    label="Breve descrição *" 
                     variant="outlined" 
                     value={description}
                     onChange={event => setDescription(event.target.value)} 
-                    required
                 />
             </div>
 
@@ -55,13 +52,11 @@ export default ({title, setTitle, briefTitle, setBriefTitle, description, setDes
                     { 
                         image ? 
                             <img src={image} alt="banner"/> 
-                        : <p>Arraste sua imagem aqui ou clique para selecionar</p> 
+                        : <p>Arraste sua imagem aqui ou clique para selecionar *</p> 
                     }
                     <input
                         type="file"
                         onChange={handleSetImage}
-                        placeholder="Breve descrição"
-                        required={!image}
                     />
                 </div>
             </div>

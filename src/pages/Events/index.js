@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Button, Stepper, Step, StepLabel } from '@material-ui/core'
+import { useSnackbar } from 'notistack'
 import moment from 'moment'
 
 import './styles.css'
@@ -11,6 +12,7 @@ import StepThree from '../../components/Form/Events/StepThree'
 
 export default () => {
     const history = useHistory()
+    const { enqueueSnackbar } = useSnackbar()
 
     const steps = ['Dados', 'Dados adicionais', 'Descrição']
     const [activeStep, setActiveStep] = useState(0)
@@ -22,7 +24,7 @@ export default () => {
     const [lat, setLat] = useState('')
     const [long, setLong] = useState('')
 
-    const [classification, setClassification] = useState('')
+    const [classification, setClassification] = useState(null)
     const [tour, setTour] = useState({'hex': '#d79b07'})
     
     const [date, setDate] = useState(null)
@@ -53,9 +55,50 @@ export default () => {
     },[])
 
     function handleVisualization(event) {
+      if (activeStep === 0) {
+        if (!name) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha o Nome do evento');
+        }
+        if (!local) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha o Local do evento');
+        }
+      }
+
+      if (activeStep === 1) {
+        if (!classification) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha a Classificação do evento');
+        }
+        if (!date) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha a Data do evento');
+        }
+        if (!start) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha o Horário de início do evento');
+        }
+        if (!end) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha o Horário de término do evento');
+        }
+        if (end <= start) {
+          event.preventDefault()
+          return enqueueSnackbar('O Horário de início deve ser anterior ao Horário de término', {variant: 'warning'});
+        }
+      }
+
+      if (activeStep === 2) {
+        if (!description) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha a Descrição do evento');
+        }
+      }
+
       if (activeStep < steps.length - 1) {
-        event.preventDefault()
         setActiveStep(activeStep + 1)
+        event.preventDefault()
         return 
       }
 
@@ -93,7 +136,7 @@ export default () => {
           
           <h2>Criar Evento</h2>
 
-          <Stepper activeStep={activeStep} alternativeLabel>
+          <Stepper activeStep={activeStep}>
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
@@ -152,6 +195,7 @@ export default () => {
           </form>
           
         </div>
+        
       </main>
     )
 }

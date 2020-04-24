@@ -57,6 +57,7 @@ export default () => {
         {pagesEvents ?
         <div className="container-pagination">
           <Pagination 
+            color="primary"
             page={currentPageEvents}
             onChange={(_, value) => setCurrentPageEvents(value)}
             count={pagesEvents} 
@@ -83,6 +84,7 @@ export default () => {
         {pagesNews ?
         <div className="container-pagination">
           <Pagination 
+            color="primary"
             page={currentPageNews}
             onChange={(_, value) => setCurrentPageNews(value)}
             count={pagesNews} 

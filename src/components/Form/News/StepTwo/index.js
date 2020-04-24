@@ -7,13 +7,12 @@ export default ({text, setText}) => {
             <div className="container-divider">
                 <TextField 
                 className="input" 
-                label="Notícia" 
+                label="Notícia *" 
                 variant="outlined" 
                 multiline 
                 rows={13} 
                 value={text}
                 onChange={event => setText(event.target.value)} 
-                required
                 />
             </div>
         </>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Button, Stepper, Step, StepLabel } from '@material-ui/core'
+import { useSnackbar } from 'notistack'
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
@@ -11,6 +12,7 @@ import StepTwoNews from '../../components/Form/News/StepTwo'
 
 export default () => {
   const history = useHistory()
+  const { enqueueSnackbar } = useSnackbar()
 
   const steps = ['Dados', 'Notícia']
   const [activeStep, setActiveStep] = useState(0)
@@ -37,6 +39,32 @@ export default () => {
   }, [])
 
   function handleVisualization(event) {
+    if (activeStep === 0) {
+      if (!title) {
+        event.preventDefault()
+        return enqueueSnackbar('Preencha o Título da notícia');
+      }
+      if (!briefTitle) {
+        event.preventDefault()
+        return enqueueSnackbar('Preencha o Título reduzido da notícia');
+      }
+      if (!description) {
+        event.preventDefault()
+        return enqueueSnackbar('Preencha a Breve descrição da notícia');
+      }
+      if (!image) {
+        event.preventDefault()
+        return enqueueSnackbar('A notícia deve conter uma imagem');
+      }
+    }
+
+    if (activeStep === 1) {
+      if (!text) {
+        event.preventDefault()
+        return enqueueSnackbar('Preencha o texto da Notícia');
+      }
+    }
+
     if (activeStep < steps.length - 1) {
       event.preventDefault()
       setActiveStep(activeStep + 1)
@@ -69,7 +97,7 @@ export default () => {
 
         <h2>Criar Notícia</h2>
 
-        <Stepper activeStep={activeStep} alternativeLabel>
+        <Stepper activeStep={activeStep}>
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>

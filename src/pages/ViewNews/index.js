@@ -71,12 +71,12 @@ export default () => {
 									<Button 
 										onClick={handleUpdateNews} 
 										variant="contained">
-										Atualizar Evento
+										Atualizar Notícia
 									</Button> :
 									<Button 
 										onClick={handleAddNews} 
 										variant="contained">
-										Adicionar Evento
+										Adicionar Notícia
 									</Button>
 							}
 							<Button 
