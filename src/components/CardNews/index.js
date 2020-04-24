@@ -16,7 +16,6 @@ export default ({ news, home }) => {
 
   const {setShowModal, setWhere} = useContext(UserContext)
 
-
   async function handleEditNews() {
     const {data} = await api.get(`/news/${news._id}`)
     localStorage.setItem('@news', JSON.stringify(data))
@@ -41,19 +40,19 @@ export default ({ news, home }) => {
       <p className="card-news-brief-title">{news.briefTitle}</p>
       <p className="card-news-by">POR ADMIN</p>
       <p className="card-news-description">{news.description}</p>
-      
-      {
-        home ?
+
         <div className="footer-card-news">
           <p className="card-news-date">{moment(news.date).format('LL').toLowerCase()}</p>
-          <div className="icons-card-news">
-            <img src={edit} alt="edit" onClick={handleEditNews} />
-            <img src={trash} alt="delete" onClick ={handleDeleteNews}/>
-          </div>
+          {
+            home ?
+              <div className="icons-card-news">
+                <img src={edit} alt="edit" onClick={handleEditNews} />
+                <img src={trash} alt="delete" onClick={handleDeleteNews}/>
+              </div>
+            : <></>
+          }
         </div>
-        :
-        <p className="card-news-date">{moment(news.date).format('LL').toLowerCase()}</p>
-      }
+
     </div>
     
   )

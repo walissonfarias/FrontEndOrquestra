@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { TextField, Button } from '@material-ui/core'
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
@@ -61,44 +62,47 @@ export default () => {
 
   return (
     <main id="news" className="pages">
-
       <div className="container-add-news">
 
         <h2>Criar Notícia</h2>
 
         <form onSubmit={handleVisualization}>
 
-          <input
-            type="text"
-            placeholder="Título da notícia"
-            value={title}
-            onChange={event => setTitle(event.target.value)}
-            required
-          />
+          <div className="container-divider">
+            <TextField 
+              className="input" 
+              label="Título da notícia" 
+              variant="outlined" 
+              value={title}
+              onChange={event => setTitle(event.target.value)} 
+              required
+            />
+          </div>
 
           <div className="container-divider">
 
-            <div className="content-divider-text">
-              <input
-                type="text"
-                placeholder="Título reduzido"
+            <div className="container-divider-text">
+              <TextField 
+                className="input" 
+                label="Título reduzido" 
+                variant="outlined" 
                 value={briefTitle}
-                onChange={event => setBriefTitle(event.target.value)}
+                onChange={event => setBriefTitle(event.target.value)} 
                 required
               />
-
-              <input
-                type="text"
-                placeholder="Breve descrição"
+              <TextField 
+                className="input" 
+                label="Breve descrição" 
+                variant="outlined" 
                 value={description}
-                onChange={event => setDescription(event.target.value)}
+                onChange={event => setDescription(event.target.value)} 
                 required
               />
             </div>
 
 
-            <div className="content-divider-file">
-              { image ? <img src={image} alt="banner"/> : <p>Arraste sua imagem aqui ou clique para selecionar'</p> }
+            <div className="container-divider-file">
+              { image ? <img src={image} alt="banner"/> : <p>Arraste sua imagem aqui ou clique para selecionar</p> }
               <input
                 type="file"
                 onChange={handleSetImage}
@@ -108,15 +112,20 @@ export default () => {
             </div>
           </div>
 
-          <textarea
-            type="text"
-            placeholder="Notícia"
-            value={text}
-            onChange={event => setText(event.target.value)}
-            rows="10"
-          />
+          <div className="container-divider">
+            <TextField 
+              className="input" 
+              label="Notícia" 
+              variant="outlined" 
+              multiline 
+              rows={13} 
+              value={text}
+              onChange={event => setText(event.target.value)} 
+              required
+            />
+          </div>
 
-          <button type="submit">Visualizar</button>
+          <Button className="button" type="submit" variant="contained">Visualizar</Button>
 
         </form>
 

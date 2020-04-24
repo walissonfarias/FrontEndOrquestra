@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Pagination } from '@material-ui/lab'
 
 import './styles.css'
 
@@ -8,31 +9,40 @@ import CardNews from '../../components/CardNews'
 import CardEvents from '../../components/CardEvents'
 
 export default () => {
-  const [news, setNews] = useState([])
   const [events, setEvents] = useState([]) 
+  const [currentPageEvents, setCurrentPageEvents] = useState(1) 
+  const [pagesEvents, setPagesEvents] = useState(null) 
+  
+  const [news, setNews] = useState([])
+  const [currentPageNews, setCurrentPageNews] = useState(1)
+  const [pagesNews, setPagesNews] = useState(null)
 
   useEffect(() => {
     (async () => {
-      const { data } = await api.get('/news')
+      const { data } = await api.get(`/events?page=${currentPageEvents}`)
+      setEvents(data.docs)
+
+      setCurrentPageEvents(Number(data.page))
+      setPagesEvents(data.pages)
+    })()
+  }, [currentPageEvents])
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await api.get(`/news?page=${currentPageNews}`)
       setNews(data.docs)
-    })()
-  }, [])
 
-  useEffect(() => {
-    (async () => {
-      const {data} = await api.get('/events')
-      setEvents( data.docs)
-
+      setCurrentPageNews(Number(data.page))
+      setPagesNews(data.pages)
     })()
-  }, [])
+  }, [currentPageNews])
 
   return (
     <main id="home" className="pages">
       <div className="container-home">
         <h2>Últimos eventos adicionados</h2>
-
         <div className="container-cards">
-        {
+          {
             events ? 
             events.map(item => 
               <div className="content-card" key={item._id}>
@@ -41,15 +51,23 @@ export default () => {
             )
             :
             <></>
-
           }
-          
         </div>
+        
+        {pagesEvents ?
+        <div className="container-pagination">
+          <Pagination 
+            page={currentPageEvents}
+            onChange={(_, value) => setCurrentPageEvents(value)}
+            count={pagesEvents} 
+            shape="rounded"
+          />
+        </div>
+        : <></>}
       </div>
 
       <div className="container-home">
         <h2>Últimas notícias adicionadas</h2>
-
         <div className="container-cards">
           {
             news ? 
@@ -62,6 +80,16 @@ export default () => {
             <></>
           }
         </div>
+        {pagesNews ?
+        <div className="container-pagination">
+          <Pagination 
+            page={currentPageNews}
+            onChange={(_, value) => setCurrentPageNews(value)}
+            count={pagesNews} 
+            shape="rounded" 
+          />
+        </div>
+        : <></>}
       </div>
     </main>
   )

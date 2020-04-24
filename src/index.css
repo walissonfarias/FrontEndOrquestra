@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .app{
@@ -38,7 +38,7 @@ aside.menu-area{
 .pages {
   display: flex;
   background-color: var(--color-background);
-  width: calc(100vw - 100px);
+  width: 100%;
   height: calc(100vh - 100px);
   margin-top: 100px;
   align-items: center;

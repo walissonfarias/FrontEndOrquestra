@@ -1,12 +1,13 @@
 #home {
-  flex-direction: column;
   align-items: flex-start;
   flex-direction: row;
+  min-width: 900px;
 }
 
 #home .container-home {
   overflow: auto;
   width: 45%;
+  min-width: 400px;
   max-height: calc(100% - 50px);
   overflow-x: hidden;
   margin: 0 25px;
@@ -20,16 +21,20 @@
 
 #home .container-cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   margin-bottom: 50px;
 }
 
 #home .content-card {
+  margin: 20px;
+}
+
+#home .container-pagination{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  margin: 25px 0;
+  width: 100%;
+  margin-bottom: 50px;
 }

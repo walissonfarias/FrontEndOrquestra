@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom"
+import { Button } from '@material-ui/core'
 
 import './styles.css'
 
@@ -52,7 +53,7 @@ export default () => {
             <div className="container-text">
               <p className="view-news-title">{news.title}</p>
               <p className="view-news-description">{news.description}</p>
-              <p className="view-news-text">{news.text}</p>
+              <pre className="view-news-text">{news.text}</pre>
             </div>
           </div>
         </div>
@@ -65,13 +66,28 @@ export default () => {
             <CardNews news={news} />
 
             <div className="container-buttons">
-              {localStorage.getItem('@isEdit') ?
-                <button onClick={handleUpdateNews}>Atualizar Notícia</button> :
-                <button onClick={handleAddNews}>Adicionar Notícia</button>
-              }              
-              <button onClick={handleBack}>Editar</button>
-            </div>
+							{
+								localStorage.getItem('@isEdit') ?
+									<Button 
+										onClick={handleUpdateNews} 
+										variant="contained">
+										Atualizar Evento
+									</Button> :
+									<Button 
+										onClick={handleAddNews} 
+										variant="contained">
+										Adicionar Evento
+									</Button>
+							}
+							<Button 
+								onClick={handleBack} 
+								variant="text">
+								Editar
+							</Button>
+						</div>
+
           </div> 
+
         </div>
 
       </div>
