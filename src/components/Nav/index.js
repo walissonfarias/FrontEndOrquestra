@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import React, { useEffect, useState, useContext } from 'react'
+import { useLocation, useHistory } from 'react-router-dom'
 
 import './styles.css'
 
@@ -13,9 +13,14 @@ import eventFill from '../../assets/icons/Event/fill.svg'
 import newsFill from '../../assets/icons/News/fill.svg'
 import userFill from '../../assets/icons/User/fill.svg'
 
+import UserContext from '../../utils/contexts'
+
 export default () => {
     const location = useLocation();
-    
+    const history = useHistory()
+
+    const { setShowModal, setWhere } = useContext(UserContext)
+
     const [home, setHome] = useState();
     const [event, setEvent] = useState();
     const [news, setNews] = useState();
@@ -58,21 +63,53 @@ export default () => {
         }
     }, [location]);
 
+    function handleOnClick(event, route) {
+        event.preventDefault()
+        if (location.pathname === route) return
+        switch (location.pathname) {
+            case '/add-events':
+            case '/add-news':
+                localStorage.clear()
+                setWhere(`descart@${route}`)
+                setShowModal(true)
+                return
+            default:
+                break
+        }
+        history.push(route)
+    }
+
     return (
         <aside className="menu-area">
             <nav className="menu">
-                <Link to="/" className={home ? 'selected' : ''}>
+                <a 
+                    href="/" 
+                    onClick={event => handleOnClick(event, '/')} 
+                    className={home ? 'selected' : ''}
+                >
                     <img src={home ? homeFill : homeOutline} alt="inicio"/>
-                </Link>
-                <Link to="/add-events" className={event ? 'selected' : ''}>
+                </a>
+                <a
+                    href="/add-events" 
+                    onClick={event => handleOnClick(event, '/add-events')} 
+                    className={event ? 'selected' : ''}
+                    >
                     <img src={event ? eventFill : eventOutline} alt="evento"/>
-                </Link>
-                <Link to="/add-news" className={news ? 'selected' : ''}>
+                </a>
+                <a 
+                    href="/add-news" 
+                    onClick={event => handleOnClick(event, '/add-news')} 
+                    className={news ? 'selected' : ''}
+                >
                     <img src={news ? newsFill : newsOutline} alt="noticias"/>
-                </Link>
-                <Link to="/add-users" className={user ? 'selected' : ''}>
+                </a>
+                <a 
+                    href="/add-users" 
+                    onClick={event => handleOnClick(event, '/add-users')} 
+                    className={user ? 'selected' : ''}
+                >
                     <img src={user ? userFill : userOutline} alt="usuarios"/>
-                </Link>
+                </a>
             </nav>
         </aside>
     )

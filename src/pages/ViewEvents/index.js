@@ -54,13 +54,12 @@ export default () => {
 			"end": new Date(events.hour.end),
 			"local": events.local,
 			"address": events.address,
-			"lat": events.location.coordinates[1],
-			"long": events.location.coordinates[0],
+			"lat": events.location.coordinates[1] ? events.location.coordinates[1] : 0,
+			"long": events.location.coordinates[0] ? events.location.coordinates[0] : 0,
 			"duration": events.duration,
 			"classification": events.classification,
 			"description": events.description
 		}
-		console.log(data)
 		await api.post('/events', data)
 
 		localStorage.removeItem('@events')
