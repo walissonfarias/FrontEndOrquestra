@@ -1,65 +1,67 @@
-import React from 'react'
-import CardNews from '../CardNews/index'
-import CardEvents from '../CardEvents/index'
-import './styles.css'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import UserContext from '../../contexts/index'
+import './styles.css'
+
+import UserContext from '../../utils/contexts'
+
+import CardNews from '../Card/CardNews/index'
+import CardEvents from '../Card/CardEvents/index'
 
 import api from '../../services/apiEvents'
 
-export default ({onClose = () => {}},  isEvent) => {
-    const newss = localStorage.getItem('@news')
-    const eventss = localStorage.getItem('@events')
-    
-    const deleteID = localStorage.getItem('@deleteItem_id')
+export default ({onClose = () => {}}) => {
+    const history = useHistory()
 
-    const {where} = useContext(UserContext)
-    console.log(where);
+    const { where } = useContext(UserContext)
+
+    const event = JSON.parse(localStorage.getItem('@events'))
+    const news = JSON.parse(localStorage.getItem('@news'))
+    const deleteId = localStorage.getItem('@deleteItem_id')
+
     async function deleteContent(){
-        if(where === 'n') {
-            await api.delete(`/news/${deleteID}`).then(response => {
-                console.log(response)
-            })
-        }  
-        else {
-            
-            await api.delete(`/events/${deleteID}`).then(response => {
-                console.log(response)
-            })
-        }
+        if(where === 'news') 
+            await api.delete(`/news/${deleteId}`)
+        else
+            await api.delete(`/events/${deleteId}`)
+        localStorage.clear()
         window.location.reload()
     }
 
+    function handleDescart() {
+        const route = where.split('@')[1]
+        history.push(route)
+        onClose()
+    } 
+
     return(
-        <div className="modal">
+        <div id="modal">
             <div className="container">
-                <div className="content">
-                    <h1 className="title">DELETAR</h1> <br/>
-
-                    {   where === 'e' ?
-                        <div>
-                            <p>Você deseja deletar esse evento?</p> <br/> <br/>
-                            <div className= "content-card">
-                                <CardEvents home = {false} events={JSON.parse(eventss)} />
-                            </div>
-                        </div> 
-                         
-                        :
-
-                        <div>
-                            <p>Você deseja deletar essa notícia?</p> <br/> <br/>
-                            <div className= "content-card">
-                                <CardNews news ={JSON.parse(newss)} home={false}/> <br/><br/>
-                            </div>
-                        </div>
-                    }
-                    <div>
-                        <button className="cancel" onClick = {onClose}> <b>Cancelar</b></button>
-                        <button className="delete" onClick = {() => deleteContent()}> <b>Deletar</b></button>
+                {where.includes('descart') ?
+                <>
+                    <p className="title">SAIR DA PÁGINA</p>
+                    <p className="message">Ao sair da página você perderá o que está editando</p>
+                    <div className="container-buttons">
+                        <button onClick={onClose}>Voltar</button>
+                        <button className="delete" onClick={handleDescart}>Sair</button>
                     </div>
-                    
-                </div>
+                </>
+                :
+                <>
+                    <p className="title">DELETAR</p>
+                    <p>Você deseja deletar essa {where === 'event' ? 'evento' : 'notícia'}?</p>
+                    <div className= "content-card">
+                        {
+                            where === 'event' ?
+                                <CardEvents events={event} home={false} />
+                            : <CardNews news={news} home={false} />
+                        }
+                    </div>
+                    <div className="container-buttons">
+                        <button onClick={onClose}>Cancelar</button>
+                        <button className="delete" onClick={() => deleteContent()}>Deletar</button>
+                    </div>
+                </>}
             </div>
         </div>
     )

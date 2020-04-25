@@ -43,3 +43,7 @@ header .profile-info p {
   text-align: end;
   margin: 5px 25px;
 }
+
+#logout:hover {
+  cursor: pointer;
+}

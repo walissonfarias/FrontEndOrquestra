@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { Button, Stepper, Step, StepLabel } from '@material-ui/core'
+import { useSnackbar } from 'notistack'
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
 import './styles.css'
 
+import StepOneNews from '../../components/Form/News/StepOne'
+import StepTwoNews from '../../components/Form/News/StepTwo'
+
 export default () => {
   const history = useHistory()
+  const { enqueueSnackbar } = useSnackbar()
+
+  const steps = ['Dados', 'Notícia']
+  const [activeStep, setActiveStep] = useState(0)
 
   const [title, setTitle] = useState('')
   const [briefTitle, setBriefTitle] = useState('')
@@ -29,7 +38,39 @@ export default () => {
     }
   }, [])
 
-  function handleVisualization() {
+  function handleVisualization(event) {
+    if (activeStep === 0) {
+      if (!title) {
+        event.preventDefault()
+        return enqueueSnackbar('Preencha o Título da notícia');
+      }
+      if (!briefTitle) {
+        event.preventDefault()
+        return enqueueSnackbar('Preencha o Título reduzido da notícia');
+      }
+      if (!description) {
+        event.preventDefault()
+        return enqueueSnackbar('Preencha a Breve descrição da notícia');
+      }
+      if (!image) {
+        event.preventDefault()
+        return enqueueSnackbar('A notícia deve conter uma imagem');
+      }
+    }
+
+    if (activeStep === 1) {
+      if (!text) {
+        event.preventDefault()
+        return enqueueSnackbar('Preencha o texto da Notícia');
+      }
+    }
+
+    if (activeStep < steps.length - 1) {
+      event.preventDefault()
+      setActiveStep(activeStep + 1)
+      return 
+    }
+
     const data = {
       title,
       briefTitle,
@@ -45,78 +86,57 @@ export default () => {
     history.push('/view-news')
   }
 
-  const toBase64 = file => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-  });
-
-  async function handleSetImage(event) {
-    const file = event.target.files[0];
-    const data = await toBase64(file);
-    setImage(data)
-    setImageName(file.name)
+  function handleBackStep() {
+    if (activeStep <= 0) return
+    setActiveStep(activeStep - 1)
   }
 
   return (
     <main id="news" className="pages">
-
       <div className="container-add-news">
 
         <h2>Criar Notícia</h2>
 
+        <Stepper activeStep={activeStep}>
+          {steps.map((label) => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+
         <form onSubmit={handleVisualization}>
+          <div className="container-form">
+            { 
+              activeStep === 0 ? 
+                <StepOneNews
+                  title={title}
+                  setTitle={setTitle}
+                  briefTitle={briefTitle}
+                  setBriefTitle={setBriefTitle}
+                  description={description}
+                  setDescription={setDescription}
+                  image={image}
+                  setImage={setImage}
+                  setImageName={setImageName}
+                />
+                : activeStep === 1 ? 
+                <StepTwoNews
+                  text={text}
+                  setText={setText}
+                />
+                : <></>
+            }
+          </div>
+          
+          <div className="container-buttons">
+            <Button disabled={activeStep <= 0} className="button back" onClick={handleBackStep} variant="contained">Anterior</Button>
 
-          <input
-            type="text"
-            placeholder="Título da notícia"
-            value={title}
-            onChange={event => setTitle(event.target.value)}
-            required
-          />
-
-          <div className="container-divider">
-
-            <div className="content-divider-text">
-              <input
-                type="text"
-                placeholder="Título reduzido"
-                value={briefTitle}
-                onChange={event => setBriefTitle(event.target.value)}
-                required
-              />
-
-              <input
-                type="text"
-                placeholder="Breve descrição"
-                value={description}
-                onChange={event => setDescription(event.target.value)}
-                required
-              />
-            </div>
-
-
-            <div className="content-divider-file">
-              { image ? <img src={image} alt="banner"/> : <p>Arraste sua imagem aqui ou clique para selecionar'</p> }
-              <input
-                type="file"
-                onChange={handleSetImage}
-                placeholder="Breve descrição"
-                required={!image}
-              />
-            </div>
+            <Button className="button" type="submit" variant="contained">
+              {activeStep < steps.length - 1 ? 'Próximo' : 'Visualizar'}
+            </Button>
           </div>
 
-          <textarea
-            type="text"
-            placeholder="Notícia"
-            value={text}
-            onChange={event => setText(event.target.value)}
-            rows="10"
-          />
-
-          <button type="submit">Visualizar</button>
 
         </form>
 

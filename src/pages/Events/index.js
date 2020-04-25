@@ -1,70 +1,133 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { Button, Stepper, Step, StepLabel } from '@material-ui/core'
+import { useSnackbar } from 'notistack'
+import moment from 'moment'
 
 import './styles.css'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import moment from 'moment'
-import splitTime from '../../utils/splitTime'
+
+import StepOne from '../../components/Form/Events/StepOne'
+import StepTwo from '../../components/Form/Events/StepTwo'
+import StepThree from '../../components/Form/Events/StepThree'
 
 export default () => {
     const history = useHistory()
+    const { enqueueSnackbar } = useSnackbar()
+
+    const steps = ['Dados', 'Dados adicionais', 'Descrição']
+    const [activeStep, setActiveStep] = useState(0)
 
     const [name, setName] = useState('')
-    const [duration, setDuration] = useState('')
-    const [tour, setTour] = useState('')
-    const [date, setDate] = useState('')
-    const [classification, setClassification] = useState('')
-    const [startTime, setStartTime] = useState('')
-    const [address, setAddress] = useState('')
+    
     const [local, setLocal] = useState('')
+    const [address, setAddress] = useState('')
+    const [lat, setLat] = useState('')
+    const [long, setLong] = useState('')
+
+    const [classification, setClassification] = useState(null)
+    const [tour, setTour] = useState({'hex': '#d79b07'})
+    
+    const [date, setDate] = useState(null)
+    const [duration, setDuration] = useState('')
+    
+    const [start, setStart] = useState(null)
+    const [end, setEnd] = useState(null)
+    
     const [description, setDescription] = useState('')
-    // const [lat, setLat] = useState('')
-    // const [lon, setLon] = useState('')
-    // const [start, setStart] = useState('')
-    // const [end, setEnd] = useState('')
 
     useEffect(()=>{
       const data = localStorage.getItem('@events')
       if(data){
         const event = JSON.parse(data)
         setName(event.name)
-        setDuration(event.duration)
+        setDuration((event.duration).replace(' minutos', ''))
         setDate(event.date)
         setClassification(event.classification)
-        setStartTime(event.startTime)
         setAddress(event.address)
         setLocal(event.local)
         setDescription(event.description)
-        setTour(event.tour)
-        // setEnd(event.end)
-        // setStart(event.start)
-        // setLon(event.lon)
-        // setLat(event.lat)
+        setTour({'hex': event.tour})
+        setEnd(event.hour.end)
+        setStart(event.hour.start)
+        setLat(event.location.coordinates[1] === 0 ? '' : event.location.coordinates[1])
+        setLong(event.location.coordinates[0] === 0 ? '' : event.location.coordinates[0])
       }
     },[])
 
-    function handleVisualization() {
-      const endTime = splitTime(duration, startTime)
-      localStorage.setItem('@startTime', startTime)
+    function handleVisualization(event) {
+      if (activeStep === 0) {
+        if (!name) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha o Nome do evento');
+        }
+        if (!local) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha o Local do evento');
+        }
+      }
+
+      if (activeStep === 1) {
+        if (!classification) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha a Classificação do evento');
+        }
+        if (!date) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha a Data do evento');
+        }
+        if (!start) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha o Horário de início do evento');
+        }
+        if (!end) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha o Horário de término do evento');
+        }
+        if (end <= start) {
+          event.preventDefault()
+          return enqueueSnackbar('O Horário de início deve ser anterior ao Horário de término', {variant: 'warning'});
+        }
+      }
+
+      if (activeStep === 2) {
+        if (!description) {
+          event.preventDefault()
+          return enqueueSnackbar('Preencha a Descrição do evento');
+        }
+      }
+
+      if (activeStep < steps.length - 1) {
+        setActiveStep(activeStep + 1)
+        event.preventDefault()
+        return 
+      }
 
       const data = {
-        "name": name,
-        "tour": tour,
-        "date": moment(date).format(),
-        "start": moment(date+"T"+startTime).format(),
-        "end":date+"T"+endTime+":00-03:00",
-        "local": local,
-        "address": address,
-        "lat": -73.97,
-        "long": 40.77,
-        "duration": duration,
-        "classification": classification,
-        "description": description
-    }
+        name,
+        'tour': tour.hex,
+        'date': moment(date).format(),
+        'hour': {
+          'start': moment(start).format(),
+          'end': moment(end).format(),
+        },
+        local,
+        address,
+        'location': {
+          'coordinates': [long, lat]
+        },
+        'duration': duration ? duration + ' minutos' : '',
+        classification,
+        description
+      }
+
       localStorage.setItem('@events', JSON.stringify(data))
 
       history.push('/view-events')
+    }
+
+    function handleBackStep() {
+      if (activeStep <= 0) return
+      setActiveStep(activeStep - 1)
     }
     
     return (
@@ -73,99 +136,66 @@ export default () => {
           
           <h2>Criar Evento</h2>
 
+          <Stepper activeStep={activeStep}>
+            {steps.map((label) => (
+              <Step key={label}>
+                <StepLabel>{label}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+
           <form onSubmit={handleVisualization}>
-
-            <input 
-              type="text"
-              placeholder="Nome do evento"
-              value={name}
-              onChange={event=> setName(event.target.value)}
-              required
-            />
-
-            <div className="container-divider">
-
-              <div className="content-divider-text">
-                
-                <input 
-                  type = "color"
-                  placeholder="Turnê"
-                  value={tour}
-                  onChange ={event=> setTour(event.target.value)}
-                  required
-                />
-                
-
-                <input 
-                  type="date"
-                  placeholder="Data"
-                  value={date}
-                  onChange={event => setDate(event.target.value)}
-                  required
-                />
-
-                <input 
-                  type="time" 
-                  placeholder="Horário"
-                  value={startTime}
-                  onChange = {event => setStartTime(event.target.value)} 
-                  required
-                />
-              </div>
-
-              <div className="content-divider-text2">
-
-                <input 
-                  type="text"
-                  placeholder="Duração"
-                  value={duration}
-                  onChange ={event=> setDuration(event.target.value)}
-                  required
-                />
-
-                <input 
-                  type="text"
-                  placeholder="Classificação"
-                  value={classification}
-                  onChange={event => setClassification(event.target.value)}
-                  required
-                />
-
-                <input 
-                  type="text" 
-                  placeholder="Endereço"
-                  value={address}
-                  onChange = {event => setAddress(event.target.value)} 
-                  required
-                />
-
-              </div>
-
-
+            <div className="container-form">
+              {
+                activeStep === 0 ? 
+                  <StepOne 
+                    name={name}
+                    setName={setName}
+                    local={local}
+                    setLocal={setLocal}
+                    address={address}
+                    setAddress={setAddress}
+                    lat={lat}
+                    setLat={setLat}
+                    long={long}
+                    setLong={setLong}
+                  />
+                : activeStep === 1 ? 
+                  <StepTwo 
+                    classification={classification}
+                    setClassification={setClassification}
+                    tour={tour}
+                    setTour={setTour}
+                    date={date}
+                    setDate={setDate}
+                    duration={duration}
+                    setDuration={setDuration}
+                    start={start}
+                    setStart={setStart}
+                    end={end}
+                    setEnd={setEnd}
+                  />
+                : activeStep === 2 ? 
+                  <StepThree 
+                    description={description}
+                    setDescription={setDescription}
+                  />
+                : <></>
+              }
             </div>
 
-            <input 
-              type="text" 
-              placeholder="Local"
-              value={local}
-              onChange = {event => setLocal(event.target.value)} 
-              required
-            />
+            <div className="container-buttons">
+              <Button disabled={activeStep <= 0} className="button back" onClick={handleBackStep} variant="contained">Anterior</Button>
 
-            <textarea 
-              type="text"
-              placeholder="Descrição"
-              value={description}
-              onChange={event => setDescription(event.target.value)} 
-              rows="3"
-            />
-
-            <button type="submit">Visualizar</button>
-
+              <Button className="button" type="submit" variant="contained">
+                {activeStep < steps.length - 1 ? 'Próximo' : 'Visualizar'}
+              </Button>
+            </div>
 
           </form>
           
         </div>
+        
       </main>
     )
 }

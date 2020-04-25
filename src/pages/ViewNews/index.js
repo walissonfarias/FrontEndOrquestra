@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom"
+import { Button } from '@material-ui/core'
 
 import './styles.css'
 
 import api from '../../services/apiEvents'
 
-import CardNews from '../../components/CardNews'
+import CardNews from '../../components/Card/CardNews'
 
 export default () => {
   const history = useHistory()
@@ -52,7 +53,7 @@ export default () => {
             <div className="container-text">
               <p className="view-news-title">{news.title}</p>
               <p className="view-news-description">{news.description}</p>
-              <p className="view-news-text">{news.text}</p>
+              <pre className="view-news-text">{news.text}</pre>
             </div>
           </div>
         </div>
@@ -65,13 +66,28 @@ export default () => {
             <CardNews news={news} />
 
             <div className="container-buttons">
-              {localStorage.getItem('@isEdit') ?
-                <button onClick={handleUpdateNews}>Atualizar Notícia</button> :
-                <button onClick={handleAddNews}>Adicionar Notícia</button>
-              }              
-              <button onClick={handleBack}>Editar</button>
-            </div>
+							{
+								localStorage.getItem('@isEdit') ?
+									<Button 
+										onClick={handleUpdateNews} 
+										variant="contained">
+										Atualizar Notícia
+									</Button> :
+									<Button 
+										onClick={handleAddNews} 
+										variant="contained">
+										Adicionar Notícia
+									</Button>
+							}
+							<Button 
+								onClick={handleBack} 
+								variant="text">
+								Editar
+							</Button>
+						</div>
+
           </div> 
+
         </div>
 
       </div>
