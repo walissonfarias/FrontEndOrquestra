@@ -1,32 +1,53 @@
-.container-add-news {
+#news {
   display: flex;
-  background-color: var(--color-white);
   flex-direction: column;
-  width: 50%;
-  min-width: 800px;
-  max-width: 1000px;
-  height: 750px;
-  padding: 40px;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.container-add-news form {
-  position: relative;
-  height: 100%;
+#news .stepper {
+  width: 80%;
+  padding-top: 30px;
+}
+
+#news .content-add-news {
+  width: 65%;
+  min-width: 800px;
+  max-width: 1000px;
+  background-color: var(--color-white);
+  margin-top: 20px;
+  max-height: calc(100% - 20px);
+}
+
+.container-add-news-header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.container-add-news-header h2 {
   margin-top: 20px;
 }
 
-.container-add-news .container-form {
-  position: absolute;
-  top: 0;
+.container-add-news {
+  padding: 0 40px;
   width: 100%;
+  height: calc(100vh - 261px);
+  overflow: auto;
 }
 
-.container-add-news h2 {
-  margin-bottom: 20px;
+.container-add-news form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-add-news .container-form {
+  width: 100%;
 }
 
 .container-add-news form .input {
@@ -93,12 +114,11 @@
 }
 
 .container-add-news .container-buttons {
-  position: absolute;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  bottom: 0;
+  margin: 40px 0;
 }
 
 .container-add-news form .button {

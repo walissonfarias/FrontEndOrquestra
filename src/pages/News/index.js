@@ -93,55 +93,53 @@ export default () => {
 
   return (
     <main id="news" className="pages">
-      <div className="container-add-news">
+      <div className="content-add-news">
+        <div className="container-add-news-header">
+          <h2>Criar Notícia</h2>
+          <Stepper activeStep={activeStep} className="stepper">
+            {steps.map((label) => (
+              <Step key={label}>
+                <StepLabel>{label}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </div>
 
-        <h2>Criar Notícia</h2>
+        <div className="container-add-news">
+          <form onSubmit={handleVisualization}>
+            <div className="container-form">
+              { 
+                activeStep === 0 ? 
+                  <StepOneNews
+                    title={title}
+                    setTitle={setTitle}
+                    briefTitle={briefTitle}
+                    setBriefTitle={setBriefTitle}
+                    description={description}
+                    setDescription={setDescription}
+                    image={image}
+                    setImage={setImage}
+                    setImageName={setImageName}
+                  />
+                  : activeStep === 1 ? 
+                  <StepTwoNews
+                    text={text}
+                    setText={setText}
+                  />
+                  : <></>
+              }
+            </div>
 
-        <Stepper activeStep={activeStep}>
-          {steps.map((label) => (
-            <Step key={label}>
-              <StepLabel>{label}</StepLabel>
-            </Step>
-          ))}
-        </Stepper>
+            <div className="container-buttons">
+              <Button disabled={activeStep <= 0} className="button back" onClick={handleBackStep} variant="contained">Anterior</Button>
+              <Button className="button" type="submit" variant="contained">
+                {activeStep < steps.length - 1 ? 'Próximo' : 'Visualizar'}
+              </Button>
+            </div>
 
-        <form onSubmit={handleVisualization}>
-          <div className="container-form">
-            { 
-              activeStep === 0 ? 
-                <StepOneNews
-                  title={title}
-                  setTitle={setTitle}
-                  briefTitle={briefTitle}
-                  setBriefTitle={setBriefTitle}
-                  description={description}
-                  setDescription={setDescription}
-                  image={image}
-                  setImage={setImage}
-                  setImageName={setImageName}
-                />
-                : activeStep === 1 ? 
-                <StepTwoNews
-                  text={text}
-                  setText={setText}
-                />
-                : <></>
-            }
-          </div>
-          
-          <div className="container-buttons">
-            <Button disabled={activeStep <= 0} className="button back" onClick={handleBackStep} variant="contained">Anterior</Button>
-
-            <Button className="button" type="submit" variant="contained">
-              {activeStep < steps.length - 1 ? 'Próximo' : 'Visualizar'}
-            </Button>
-          </div>
-
-
-        </form>
-
+          </form>
+        </div>
       </div>
-
     </main>
   )
 }

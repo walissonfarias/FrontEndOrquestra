@@ -8,10 +8,10 @@
   overflow: auto;
   width: 45%;
   min-width: 400px;
-  max-height: calc(100% - 50px);
+  max-height: calc(100% - 20px);
   overflow-x: hidden;
   margin: 0 25px;
-  margin-top: 50px;
+  margin-top: 20px;
   background-color: var(--color-white);
 }
 
