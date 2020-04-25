@@ -1,11 +1,12 @@
 import React , { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom"
+import { Button } from '@material-ui/core'
 
 import './styles.css'
 
 import moment from 'moment'
 
-import CardEvents from '../../components/CardEvents'
+import CardEvents from '../../components/Card/CardEvents'
 import api from '../../services/apiEvents'
 
 export default () => {
@@ -19,12 +20,24 @@ export default () => {
 	}, [])
 
 	async function handleUpdateEvents(){
-		const data = localStorage.getItem('@events')
 		const dataId = localStorage.getItem('@editItem_id_events')
+
+		const data = {
+			"name": events.name,
+			"tour": events.tour,
+			"date": events.date,
+			"start": events.hour.start,
+			"end": events.hour.end,
+			"local": events.local,
+			"address": events.address,
+			"lat": events.location.coordinates[1],
+			"long": events.location.coordinates[0],
+			"duration": events.duration,
+			"classification": events.classification,
+			"description": events.description
+		}
 		
-		await api.put(`/events/${dataId}`, JSON.parse(data)).then(response => {
-			console.log(response)
-		})
+		await api.put(`/events/${dataId}`, data)
 		
 		localStorage.removeItem('@isEditEvent')
 		localStorage.removeItem('@events')
@@ -33,9 +46,22 @@ export default () => {
 	  }
 
 	async function handleAddEvents() {
-		await api.post('/events', events).then(response => {
-			console.log(response)
-		})
+		const data = {
+			"name": events.name,
+			"tour": events.tour,
+			"date": new Date(events.date),
+			"start": new Date(events.hour.start),
+			"end": new Date(events.hour.end),
+			"local": events.local,
+			"address": events.address,
+			"lat": events.location.coordinates[1] ? events.location.coordinates[1] : 0,
+			"long": events.location.coordinates[0] ? events.location.coordinates[0] : 0,
+			"duration": events.duration,
+			"classification": events.classification,
+			"description": events.description
+		}
+		await api.post('/events', data)
+
 		localStorage.removeItem('@events')
 		history.push('/')
 	}
@@ -54,9 +80,9 @@ export default () => {
 
 					<div className="content-view">
 						<div className="container-text">
-							<h2 className="view-event-name"><b>{events.name}</b></h2>
+							<p className="view-event-name">{events.name}</p>
 							<p className="view-event-date">{moment(events.date).format('LL').toLowerCase()}</p><br/> <br/>
-							<p className="view-event-description">{events.description}</p><br/>
+							<pre className="view-event-description">{events.description}</pre><br/>
 							<p className="view-event-local"> <b>Local: </b> {events.local}</p>
 							<p className="view-event-address"><b>Endereço: </b>{events.address}</p><br/>
 							<p className="view-event-duration"><b>Duração: </b>{events.duration}</p>
@@ -75,11 +101,22 @@ export default () => {
 						<div className="container-buttons">
 							{
 								localStorage.getItem('@isEditEvent') ?
-								<button onClick={handleUpdateEvents}>Atualizar Evento</button> :
-								<button onClick={handleAddEvents}>Adicionar Evento</button>
+									<Button 
+										onClick={handleUpdateEvents} 
+										variant="contained">
+										Atualizar Evento
+									</Button> :
+									<Button 
+										onClick={handleAddEvents} 
+										variant="contained">
+										Adicionar Evento
+									</Button>
 							}
-						
-							<button onClick={handleBack}>Editar</button>
+							<Button 
+								onClick={handleBack} 
+								variant="text">
+								Editar
+							</Button>
 						</div>
 					</div> 
 					</div>

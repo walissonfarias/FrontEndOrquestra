@@ -22,16 +22,23 @@
     overflow-x: hidden;
     background-color: white;
     margin-right: 25px;
+    padding-bottom: 50px;
 }
 
-.view-event-name{
+.container-view-events .container-view .view-event-name {
+    font-size: 24px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.view-event-date{
+.container-view-events .container-view .view-event-date {
     text-align: center;
     color: var(--color-gray)
+}
+
+.container-view-events .container-view .view-event-description {
+    white-space: pre-wrap;
 }
 
 .container-view-card .content-view {
@@ -42,9 +49,6 @@
     align-items: center;
 }
   
-.container-view .content-view .container-text {
-    width: calc(100% - 100px);
-}
 .container-view-events .container-view-card {
     display: flex;
     flex-direction: column;
@@ -55,11 +59,15 @@
 }
 
 .container-view-events .container-view-card .container-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 85%;
     margin: 50px 0;
 }
 .container-view-events .container-view-card .container-buttons button {
-    width: 100%;
+    width: 360px;
     height: 50px;
     background-color: var(--color-primary);
     color: var(--color-white);

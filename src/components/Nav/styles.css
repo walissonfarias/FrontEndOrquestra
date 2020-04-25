@@ -1,6 +1,9 @@
 aside {
+    display: flex;
+    justify-content: center;
     background-color: var(--color-black);
     padding-top: 50px;
+    height: 100%;
 }
 aside .menu a {
     display: flex;
@@ -11,5 +14,9 @@ aside .menu a {
 }
 
 aside .menu a:hover {
+    background-color: #7B371268;
+}
+
+aside .menu a.selected {
     background-color: var(--color-secondary);
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import './styles.css'
 
@@ -7,6 +8,32 @@ import logout from '../../assets/icons/logout.svg'
 import profile from '../../assets/icons/profile.svg'
 
 export default () => {
+  const location = useLocation();
+    
+  const [title, setTitle] = useState();
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/': 
+        setTitle('Início'); 
+        break;
+      case '/add-events': 
+      case '/view-events':
+        setTitle('Eventos'); 
+        break;
+      case '/add-news':
+      case '/view-news':
+        setTitle('Notícias'); 
+        break;
+      case '/add-users':
+        setTitle('Usuários'); 
+        break;
+      default:
+        setTitle(''); 
+        break;
+    }
+  }, [location]);
+
   return (
     <header>
 
@@ -15,7 +42,7 @@ export default () => {
       </div>
 
       <div className="container-header">
-        <h1>{'Title'}</h1>
+        <h1>{title}</h1>
 
         <div className="container-header-profile">
 
@@ -25,7 +52,7 @@ export default () => {
           </div>
 
           <img src={profile} alt="profile" width="60" />
-          <img src={logout} alt="logout" />
+          <img id="logout" src={logout} alt="logout" />
 
         </div>
 
