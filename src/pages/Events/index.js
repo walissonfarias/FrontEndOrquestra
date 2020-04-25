@@ -49,8 +49,8 @@ export default () => {
         setTour({'hex': event.tour})
         setEnd(event.hour.end)
         setStart(event.hour.start)
-        setLat(event.location.coordinates[1])
-        setLong(event.location.coordinates[0])
+        setLat(event.location.coordinates[1] === 0 ? '' : event.location.coordinates[1])
+        setLong(event.location.coordinates[0] === 0 ? '' : event.location.coordinates[0])
       }
     },[])
 
