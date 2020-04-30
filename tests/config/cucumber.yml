@@ -1,0 +1,4 @@
+Profile1: >-
+  --format html --browser Firefox adicionar-noticia.feature
+  editar-noticia.feature adicionar-evento.feature editar-evento.feature
+  remover-evento.feature visualizar-noticia.feature visualizar-evento.feature
