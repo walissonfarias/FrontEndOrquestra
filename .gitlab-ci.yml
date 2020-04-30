@@ -1,19 +1,19 @@
 image: node:latest
 
 stages:
-    - build
+    - test
     - staging
     - production
 
-build:
-    type: build
-    stage: build
+test:
+    type: test
+    stage: test
     script:
-        - npm install
-        - npm run build
-    artifacts:
-        paths:
-            - public
+        - cd ./tests
+        - yarn install
+        - yarn test
+    only:
+        - master
 
 staging:
     type: deploy

@@ -8,12 +8,12 @@
   flex-direction: row;
   justify-content: space-between;
   width: 75%;
-  max-height: calc(100% - 50px);
-  margin-top: 50px;
+  max-height: calc(100% - 20px);
+  margin-top: 20px;
 }
 
 .container-view-news h2 {
-  margin: 50px;
+  margin: 20px 50px;
 }
 
 .container-view-news .container-view {
@@ -59,12 +59,11 @@
 }
 
 .container-view-news .container-view-card {
-  display: flex;
-  flex-direction: column;
   width: 50%;
-  height: 10%;
+  overflow: auto;
+  overflow-x: hidden;
   background-color: white;
-  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .container-view-news .container-view-card .container-buttons {
