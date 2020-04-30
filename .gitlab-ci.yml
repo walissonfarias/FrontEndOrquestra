@@ -10,8 +10,8 @@ test:
     stage: test
     script:
         - cd ./tests
-        - npm install
-        - npm test
+        - yarn install
+        - yarn test
     only:
         - master
 
