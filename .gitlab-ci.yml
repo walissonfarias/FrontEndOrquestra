@@ -11,9 +11,11 @@ test:
     script:
         - cd ./tests
         - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-        - mkdir geckodriver
-        - tar -xzf geckodriver-v0.26.0-linux64.tar.gz -C geckodriver
-        - export PATH=$PATH:$PWD/geckodriver;
+        - tar -xzf geckodriver-v0.26.0-linux64.tar.gz
+        - sudo mv geckodriver /usr/local/bin
+        - 'export DISPLAY=:99.0'
+        - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+        - sleep 3
         - yarn install
         - yarn test
     only:
