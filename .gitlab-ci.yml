@@ -11,8 +11,8 @@ test:
         - selenium/hub
         - selenium/node-firefox 
     script:
-        - yarn install
-        - yarn test
+        - npm install
+        - npm test
     only:
         - master
 
