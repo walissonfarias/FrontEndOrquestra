@@ -6,9 +6,9 @@ stages:
     - production
 
 test:
-    type: test
     stage: test
-    image: selenium/node-firefox
+    services:
+        - selenium/standalone-firefox
     script:
         - yarn install
         - yarn test
