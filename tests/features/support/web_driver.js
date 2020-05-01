@@ -3,7 +3,7 @@ require('geckodriver');
 //require('iedriver'); //add this package if you want to use it.
 const webDriver = require('selenium-webdriver');
 
-const chrome = require('selenium-webdriver/chrome');
+// const chrome = require('selenium-webdriver/chrome');
 const firefox = require('selenium-webdriver/firefox');
 
 //create WebDriver instance based on your browser config;
@@ -18,7 +18,8 @@ function createDriver() {
     return new webDriver.Builder()
         .forBrowser(browser)
         .setFirefoxOptions(options)
-        .build();   
+        .usingServer('http://localhost:4444/wd/hub')
+        .build();
 }
 
 exports.driver = createDriver();
