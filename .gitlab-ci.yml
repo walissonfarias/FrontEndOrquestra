@@ -1,20 +1,8 @@
 image: node:latest
 
 stages:
-    - test
     - staging
     - production
-
-test:
-    stage: test
-    services:
-        - selenium/hub
-        - selenium/node-firefox 
-    script:
-        - npm install
-        - npm test
-    only:
-        - master
 
 staging:
     type: deploy
